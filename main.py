@@ -3,7 +3,7 @@ from kivymd.app import MDApp
 from kivymd.uix.dialog import MDDialog
 from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.pickers import MDDatePicker
-# from jnius import autoclass
+from jnius import autoclass
 from kivy.clock import Clock
 from android.runnable import run_on_ui_thread
 
@@ -12,11 +12,11 @@ from kivy.uix.widget import Widget
 from kivymd.uix.list import TwoLineAvatarIconListItem, ILeftBodyTouch
 from kivymd.uix.selectioncontrol import MDCheckbox
 
-# from datetime import datetime
+from datetime import datetime
 
-# WebView = autoclass('android.webkit.WebView')
-# WebViewClient = autoclass('android.webkit.WebViewClient')
-# activity = autoclass('org.kivy.android.PythonActivity').mActivity
+WebView = autoclass('android.webkit.WebView')
+WebViewClient = autoclass('android.webkit.WebViewClient')
+activity = autoclass('org.kivy.android.PythonActivity').mActivity
 
 # To be added after creating the database
 from database import Database
