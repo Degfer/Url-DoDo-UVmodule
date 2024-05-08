@@ -1,7 +1,7 @@
 [app]
 
 # (str) Title of your application
-title = Url DoDo UV-module
+title = UrlDoDoUVmodule
 
 # (str) Package name
 package.name = urldodo
@@ -64,7 +64,7 @@ orientation = portrait
 # author = © Copyright Info
 
 # change the major version of python used by the app
-osx.python_version = 3.7.6
+osx.python_version = 3
 
 # Kivy version to use
 osx.kivy_version = 1.9.1
