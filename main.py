@@ -5,10 +5,9 @@ from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.pickers import MDDatePicker
 from jnius import autoclass
 from kivy.clock import Clock
-#from android.runnable import run_on_ui_thread
+from android.runnable import run_on_ui_thread
 
-from android import Android
-android = Android()
+from webview import WebView
 
 from kivy.uix.widget import Widget
 
@@ -17,9 +16,9 @@ from kivymd.uix.selectioncontrol import MDCheckbox
 
 from datetime import datetime
 
-WebView = autoclass('android.webkit.WebView')
-WebViewClient = autoclass('android.webkit.WebViewClient')
-activity = autoclass('org.kivy.android.PythonActivity').mActivity
+# WebView = autoclass('android.webkit.WebView')
+# WebViewClient = autoclass('android.webkit.WebViewClient')
+# activity = autoclass('org.kivy.android.PythonActivity').mActivity
 
 # To be added after creating the database
 from database import Database
@@ -69,7 +68,7 @@ class ListItemWithCheckbox(TwoLineAvatarIconListItem):
 
     def touch_item(self, the_list_item):
         '''Touch task'''
-        android.webViewShow('https://github.com/Android-for-Python/Webview-Example/blob/main/main.py')
+        WebView('https://www.google.com',enable_javascript = True, enable_downloads = True, enable_zoom = True)
         # webbrowser.open(the_list_item.text)
         #thelistitem = the_list_item.text
         #create_webview(thelistitem=thelistitem)
