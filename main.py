@@ -72,8 +72,8 @@ class ListItemWithCheckbox(TwoLineAvatarIconListItem):
         '''Touch task'''
         id = the_list_item.text
         url = id
-        #webbrowser.open_new(url)
-        WebView(url,enable_javascript = True, enable_downloads = True, enable_zoom = True)
+        webbrowser.open(url)
+        #WebView(url,enable_javascript = True, enable_downloads = True, enable_zoom = True)
         # webbrowser.open(the_list_item.text)
         #thelistitem = the_list_item.text
         #create_webview(thelistitem=thelistitem)
