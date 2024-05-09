@@ -69,7 +69,7 @@ class ListItemWithCheckbox(TwoLineAvatarIconListItem):
     def touch_item(self, the_list_item):
         '''Touch task'''
         id = the_list_item.text
-        url = "http://" + id
+        url = id
         WebView(url,enable_javascript = True, enable_downloads = True, enable_zoom = True)
         # webbrowser.open(the_list_item.text)
         #thelistitem = the_list_item.text
