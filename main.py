@@ -9,6 +9,8 @@ from android.runnable import run_on_ui_thread
 
 from webview import WebView
 
+import webbrowser
+
 from kivy.uix.widget import Widget
 
 from kivymd.uix.list import TwoLineAvatarIconListItem, ILeftBodyTouch
@@ -70,7 +72,8 @@ class ListItemWithCheckbox(TwoLineAvatarIconListItem):
         '''Touch task'''
         id = the_list_item.text
         url = id
-        WebView(url,enable_javascript = True, enable_downloads = True, enable_zoom = True)
+        webbrowser.open_new(url)
+        #WebView(url,enable_javascript = True, enable_downloads = True, enable_zoom = True)
         # webbrowser.open(the_list_item.text)
         #thelistitem = the_list_item.text
         #create_webview(thelistitem=thelistitem)
