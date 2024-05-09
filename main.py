@@ -69,7 +69,7 @@ class ListItemWithCheckbox(TwoLineAvatarIconListItem):
     def touch_item(self, the_list_item):
         '''Touch task'''
         id = the_list_item.text
-        url = "https://" % id
+        url = "https://" + id
         WebView(url,enable_javascript = True, enable_downloads = True, enable_zoom = True)
         # webbrowser.open(the_list_item.text)
         #thelistitem = the_list_item.text
@@ -124,7 +124,7 @@ class MainApp(MDApp):
         created_task = db.create_task(task.text, task_date)
 
         # return the created task details and create a list item
-        self.root.ids['container'].add_widget(ListItemWithCheckbox(pk=created_task[0], text='[b]'+str(created_task[1])+'[/b]', secondary_text=created_task[2]))
+        self.root.ids['container'].add_widget(ListItemWithCheckbox(pk=created_task[0], text=str(created_task[1]), secondary_text=created_task[2]))
         task.text = ''
 
 if __name__ == '__main__':
