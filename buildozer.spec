@@ -292,6 +292,7 @@ android.archs = arm64-v8a, armeabi-v7a
 # (bool) enables Android auto backup feature (Android API >=23)
 android.allow_backup = True
 android.usesCleartextTraffic = True
+android.networkSecurityConfig = "@xml/network_security_config"
 
 # (str) XML file for custom backup rules (see official auto backup documentation)
 # android.backup_rules =
