@@ -5,7 +5,10 @@ from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.pickers import MDDatePicker
 from jnius import autoclass
 from kivy.clock import Clock
-from android.runnable import run_on_ui_thread
+#from android.runnable import run_on_ui_thread
+
+from android import Android
+android = Android()
 
 from kivy.uix.widget import Widget
 
@@ -66,9 +69,10 @@ class ListItemWithCheckbox(TwoLineAvatarIconListItem):
 
     def touch_item(self, the_list_item):
         '''Touch task'''
+        android.webViewShow('https://github.com/Android-for-Python/Webview-Example/blob/main/main.py')
         # webbrowser.open(the_list_item.text)
-        thelistitem = the_list_item.text
-        create_webview(thelistitem=thelistitem)
+        #thelistitem = the_list_item.text
+        #create_webview(thelistitem=thelistitem)
 
 class LeftCheckbox(ILeftBodyTouch, MDCheckbox):
     '''Custom left container'''
