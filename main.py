@@ -3,7 +3,9 @@ from kivymd.app import MDApp
 from kivymd.uix.dialog import MDDialog
 from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.pickers import MDDatePicker
-from jnius import autoclass
+
+from jnius import autoclass, cast, PythonJavaClass, java_method
+
 from kivy.clock import Clock
 from android.runnable import run_on_ui_thread
 
@@ -78,6 +80,7 @@ class ListItemWithCheckbox(TwoLineAvatarIconListItem):
         browserIntent = Intent()
         browserIntent.setAction(Intent.ACTION_VIEW)
         browserIntent.setData(Uri.parse(url))
+        currentActivity = cast('android.app.Activity', mActivity)
         currentActivity.startActivity(browserIntent)
 
         #webbrowser.open(url)
