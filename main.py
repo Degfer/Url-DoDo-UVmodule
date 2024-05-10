@@ -76,9 +76,11 @@ class ListItemWithCheckbox(TwoLineAvatarIconListItem):
         url = id
 
         Intent = autoclass('android.content.Intent')
+        PythonActivity = autoclass('org.kivy.android.PythonActivity')
         Uri = autoclass('android.net.Uri')
         browserIntent = Intent()
         browserIntent.setAction(Intent.ACTION_VIEW)
+        mActivity = PythonActivity.mActivity 
         browserIntent.setData(Uri.parse(url))
         currentActivity = cast('android.app.Activity', mActivity)
         currentActivity.startActivity(browserIntent)
