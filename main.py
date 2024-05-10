@@ -82,8 +82,8 @@ class ListItemWithCheckbox(TwoLineAvatarIconListItem):
         browserIntent.setAction(Intent.ACTION_VIEW)
         mActivity = PythonActivity.mActivity 
         browserIntent.setData(Uri.parse(url))
-        currentActivity = cast('android.app.Activity', mActivity)
-        currentActivity.startActivity(browserIntent)
+        #currentActivity = cast('android.app.Activity', mActivity)
+        #currentActivity.startActivity(browserIntent)
 
         #webbrowser.open(url)
         #WebView(url,enable_javascript = True, enable_downloads = True, enable_zoom = True)
