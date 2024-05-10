@@ -72,9 +72,18 @@ class ListItemWithCheckbox(TwoLineAvatarIconListItem):
         '''Touch task'''
         id = the_list_item.text
         url = id
-        webbrowser.open(url)
+
+        Intent = autoclass('android.content.Intent')
+        Uri = autoclass('android.net.Uri')
+        browserIntent = Intent()
+        browserIntent.setAction(Intent.ACTION_VIEW)
+        browserIntent.setData(Uri.parse(url))
+        currentActivity = cast('android.app.Activity', mActivity)
+        currentActivity.startActivity(browserIntent)
+
+        #webbrowser.open(url)
         #WebView(url,enable_javascript = True, enable_downloads = True, enable_zoom = True)
-        # webbrowser.open(the_list_item.text)
+
         #thelistitem = the_list_item.text
         #create_webview(thelistitem=thelistitem)
 
