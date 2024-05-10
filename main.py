@@ -75,15 +75,15 @@ class ListItemWithCheckbox(TwoLineAvatarIconListItem):
         id = the_list_item.text
         url = id
 
-        Intent = autoclass('android.content.Intent')
         PythonActivity = autoclass('org.kivy.android.PythonActivity')
+        activity = PythonActivity.mActivity
+        Intent = autoclass('android.content.Intent')
         Uri = autoclass('android.net.Uri')
         browserIntent = Intent()
         browserIntent.setAction(Intent.ACTION_VIEW)
-        mActivity = PythonActivity.mActivity 
         browserIntent.setData(Uri.parse(url))
-        #currentActivity = cast('android.app.Activity', mActivity)
-        #currentActivity.startActivity(browserIntent)
+        currentActivity = cast('android.app.Activity', activity)
+        currentActivity.startActivity(browserIntent)
 
         #webbrowser.open(url)
         #WebView(url,enable_javascript = True, enable_downloads = True, enable_zoom = True)
