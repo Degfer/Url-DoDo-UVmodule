@@ -104,16 +104,16 @@ android.permissions = android.permission.INTERNET, (name=android.permission.WRIT
 #android.api = 31
 
 # (int) Minimum API your APK / AAB will support.
-#android.minapi = 21
+android.minapi = 21
 
 # (int) Android SDK version to use
-#android.sdk = 20
+android.sdk = 24
 
 # (str) Android NDK version to use
-#android.ndk = 23b
+android.ndk = 23b
 
 # (int) Android NDK API to use. This is the minimum API your app will support, it should usually match android.minapi.
-#android.ndk_api = 21
+android.ndk_api = 21
 
 # (bool) Use --private data storage (True) or --dir public storage (False)
 #android.private_storage = True
@@ -148,6 +148,7 @@ android.permissions = android.permission.INTERNET, (name=android.permission.WRIT
 # (str) Extra xml to write directly inside the <manifest> element of AndroidManifest.xml
 # use that parameter to provide a filename from where to load your custom XML code
 #android.extra_manifest_xml = ./src/android/extra_manifest.xml
+android.networkSecurityConfig = "./xml/network_security_config"
 
 # (str) Extra xml to write directly inside the <manifest><application> tag of AndroidManifest.xml
 # use that parameter to provide a filename from where to load your custom XML arguments:
@@ -292,7 +293,6 @@ android.archs = arm64-v8a, armeabi-v7a
 # (bool) enables Android auto backup feature (Android API >=23)
 android.allow_backup = True
 #android.usesCleartextTraffic = True
-android.networkSecurityConfig = "@xml/network_security_config"
 
 # (str) XML file for custom backup rules (see official auto backup documentation)
 # android.backup_rules =
