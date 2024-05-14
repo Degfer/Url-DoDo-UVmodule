@@ -9,6 +9,8 @@ from jnius import autoclass, cast, PythonJavaClass, java_method
 from kivy.clock import Clock
 from android.runnable import run_on_ui_thread
 
+from android import Android
+
 from webview import WebView
 
 import webbrowser
@@ -75,15 +77,18 @@ class ListItemWithCheckbox(TwoLineAvatarIconListItem):
         id = the_list_item.text
         url = id
 
-        PythonActivity = autoclass('org.kivy.android.PythonActivity')
-        activity = PythonActivity.mActivity
-        Intent = autoclass('android.content.Intent')
-        Uri = autoclass('android.net.Uri')
-        browserIntent = Intent()
-        browserIntent.setAction(Intent.ACTION_VIEW)
-        browserIntent.setData(Uri.parse(url))
-        currentActivity = cast('android.app.Activity', activity)
-        currentActivity.startActivity(browserIntent)
+        Android.webViewShow('https://vk.com/')
+
+
+        # PythonActivity = autoclass('org.kivy.android.PythonActivity')
+        # activity = PythonActivity.mActivity
+        # Intent = autoclass('android.content.Intent')
+        # Uri = autoclass('android.net.Uri')
+        # browserIntent = Intent()
+        # browserIntent.setAction(Intent.ACTION_VIEW)
+        # browserIntent.setData(Uri.parse(url))
+        # currentActivity = cast('android.app.Activity', activity)
+        # currentActivity.startActivity(browserIntent)
 
         #webbrowser.open(url)
         #WebView(url,enable_javascript = True, enable_downloads = True, enable_zoom = True)
