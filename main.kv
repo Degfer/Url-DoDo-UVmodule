@@ -3,7 +3,7 @@ MDFloatLayout:
         id: task_label
         halign: 'center'
         markup: True
-        text: "[u][size=48][b]Task Manager[/b][/size][/u]"
+        text: "[u][size=48][b]Мой УФ-модуль Сверчок[/b][/size][/u]"
         pos_hint: {'y': .45}
 
     ScrollView:
@@ -13,9 +13,10 @@ MDFloatLayout:
         MDList:
             id: container
 
-
-    MDFloatingActionButton:
+    MDFillRoundFlatIconButton:
         icon: 'plus-thick'
+        text: "Добавить модуль"
+        md_bg_color: 0, 0.5, 255, 1
         on_release: app.show_task_dialog()
         elevation_normal: 12
         pos_hint: {'x': .45 , 'y': .04}
@@ -31,7 +32,10 @@ MDFloatLayout:
 
         MDTextField:
             id: task_text
-            hint_text: "Add Task..."
+            hint_text: "url-адрес УФ-модуля..."
+            hint_text_color_focus: 0, 0.5, 255, 1
+            text_color_focus: 0, 0.5, 255, 1
+            line_color_focus: 0, 0.5, 255, 1
             pos_hint: {"center_y": .4}
             max_text_length: 50
             on_text_validate: (app.add_task(task_text, date_text.text), app.close_dialog())
@@ -44,10 +48,11 @@ MDFloatLayout:
         orientation: 'horizontal'
 
         MDRaisedButton:
-            text: "SAVE"
+            text: "Сохранить"
+            md_bg_color: 0, 0.5, 255, 1
             on_release: (app.add_task(task_text, date_text.text), app.close_dialog())
         MDFlatButton:
-            text: 'CANCEL'
+            text: 'Отмена'
             on_release: app.close_dialog()
 
 
@@ -63,4 +68,10 @@ MDFloatLayout:
         text_color: 1, 0, 0, 1
         on_release:
             root.delete_item(the_list_item)
+
+<MyWebView>
+    MDFlatButton:
+        text: "Push"
+        pos_hint: {"center_x": .5, "center_y": .4}
+        on_press: root.Push()
 
