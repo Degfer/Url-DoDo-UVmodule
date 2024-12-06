@@ -1,7 +1,7 @@
 [app]
 
 # (str) Title of your application
-title = МойСверчок
+title = SmartТепло
 
 # (str) Package name
 package.name = urldodo
