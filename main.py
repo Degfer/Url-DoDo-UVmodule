@@ -105,7 +105,7 @@ class MainApp(MDApp):
     def show_task_dialog(self):
         if not self.task_list_dialog:
             self.task_list_dialog = MDDialog(
-                title="Создать Модуль",
+                title="Подключить контроллер",
                 type="custom",
                 content_cls=DialogContent(),
             )
